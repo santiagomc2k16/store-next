@@ -12,15 +12,7 @@ export default function Cart(props: Props) {
     <main className="m-3 border rounded-md p-3 w-4/6">
       <h1 className="text-3xl my-3 font-semibold">🛒 Tú carrito</h1>
       {listOfProd.data.map((item: IProduct) => {
-        return (
-          <LongCard
-            key={item.id.valueOf()}
-            name={item.name}
-            price={item.price}
-            description={item.description}
-            imgUrl={item.imgUrl}
-          />
-        );
+        return <LongCard key={item.id.valueOf()} product={item} />;
       })}
     </main>
   );

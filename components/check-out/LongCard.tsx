@@ -1,16 +1,13 @@
-//import Amount from "./Amount.astro";
+import { IProduct } from "@/interface/IProduct";
 import Image from "next/image";
 import Amount from "./Amount";
 
 interface Props {
-  name: String;
-  price: String;
-  description: String;
-  imgUrl: String;
+  product: IProduct;
 }
 
 export default function LongCard(props: Props) {
-  const { name, price, description, imgUrl } = props;
+  const { name, price, description, imgUrl } = props.product;
 
   return (
     <div className="flex flex-row h-36 w-full rounded-md border-solid border outline-sky-100 p-2 items-center justify-between mb-2">
