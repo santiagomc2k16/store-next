@@ -1,5 +1,6 @@
 import { IProduct } from "@/interface/IProduct";
 import Image from "next/image";
+import AddToCart from "./AddToCart";
 
 interface Props {
   product: IProduct;
@@ -23,9 +24,7 @@ export default function Card(props: Props) {
           <h2>$ {price}</h2>
           <p className="text-sm font-light">{description}</p>
         </div>
-        <button className="bg-lime-600 rounded-md p-1 text-slate-50">
-          Add to cart
-        </button>
+        <AddToCart product={props.product} />
       </div>
     </>
   );
