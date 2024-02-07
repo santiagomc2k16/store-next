@@ -1,14 +1,12 @@
+import { IProduct } from "@/interface/IProduct";
 import Image from "next/image";
 
 interface Props {
-  name: String;
-  price: String;
-  description: String;
-  imgUrl: String;
+  product: IProduct;
 }
 
 export default function Card(props: Props) {
-  const { name, price, description, imgUrl } = props;
+  const { name, price, description, imgUrl } = props.product;
 
   return (
     <>
