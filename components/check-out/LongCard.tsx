@@ -27,7 +27,7 @@ export default function LongCard(props: Props) {
         </div>
       </div>
       <div className="rigth flex items-center gap-5">
-        <Amount amount={amount ? amount.valueOf() : 1} />
+        <Amount amount={amount ? amount.valueOf() : 1} id={id} />
         <Delete id={id} />
       </div>
     </div>

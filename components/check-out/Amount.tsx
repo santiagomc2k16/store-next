@@ -2,11 +2,13 @@
 import { useState, useEffect } from "react";
 import "./Amount.css";
 import cookie from "@boiseitguru/cookie-cutter";
+import { modifyAmountCookies } from "@/app/actions/createProducts";
 
-export default function Amount({ amount }: { amount: number }) {
+export default function Amount({ amount, id }: { amount: number; id: number }) {
   const [amountState, setAmount] = useState<number>(amount);
 
   useEffect(() => {
+    modifyAmountCookies(id, amountState);
     cookie.set("amount", amountState.toString());
   }, [amountState]);
 
