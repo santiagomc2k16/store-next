@@ -2,6 +2,7 @@
 import { IProduct } from "@/interface/IProduct";
 import cookie from "@boiseitguru/cookie-cutter";
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Summary() {
   const prods = cookie.get("products");
@@ -25,9 +26,11 @@ export default function Summary() {
       ) : (
         <h1>Agrega productos</h1>
       )}
-      <button className="bg-lime-600 rounded-md px-2 py-1 text-slate-50 mr-5 w-full my-3">
-        Pagar
-      </button>
+      <Link href="/cart/method">
+        <button className="bg-lime-600 rounded-md px-2 py-1 text-slate-50 mr-5 w-full my-3">
+          Pagar
+        </button>
+      </Link>
     </main>
   );
 }
