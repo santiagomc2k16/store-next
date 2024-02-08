@@ -8,4 +8,5 @@ export interface IProduct {
   price: String;
   description: String;
   imgUrl: String;
+  amount?: Number;
 }
