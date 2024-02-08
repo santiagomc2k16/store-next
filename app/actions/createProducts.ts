@@ -18,7 +18,7 @@ export const createProductsCookies = async (product: IProduct) => {
       }
     });
     if (!saved) productCookie.data.push({ ...product, amount: 1 });
-    console.log(productCookie);
+    //console.log(productCookie);
     cookies().set("products", JSON.stringify(productCookie));
   }
 };

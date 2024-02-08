@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function LongCard(props: Props) {
-  const { name, price, description, imgUrl } = props.product;
+  const { name, price, description, imgUrl, amount } = props.product;
 
   return (
     <div className="flex flex-row h-36 w-full rounded-md border-solid border outline-sky-100 p-2 items-center justify-between mb-2">
@@ -26,7 +26,7 @@ export default function LongCard(props: Props) {
         </div>
       </div>
       <div className="rigth flex items-center gap-5">
-        <Amount amount={3} />
+        <Amount amount={amount ? amount.valueOf() : 1} />
         <button className="bg-red-600 rounded-md px-2 py-1 text-slate-50 mr-5">
           Delete
         </button>
