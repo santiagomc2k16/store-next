@@ -1,13 +1,14 @@
 import { IProduct } from "@/interface/IProduct";
 import Image from "next/image";
 import Amount from "./Amount";
+import Delete from "./Delete";
 
 interface Props {
   product: IProduct;
 }
 
 export default function LongCard(props: Props) {
-  const { name, price, description, imgUrl, amount } = props.product;
+  const { name, price, description, imgUrl, amount, id } = props.product;
 
   return (
     <div className="flex flex-row h-36 w-full rounded-md border-solid border outline-sky-100 p-2 items-center justify-between mb-2">
@@ -27,9 +28,7 @@ export default function LongCard(props: Props) {
       </div>
       <div className="rigth flex items-center gap-5">
         <Amount amount={amount ? amount.valueOf() : 1} />
-        <button className="bg-red-600 rounded-md px-2 py-1 text-slate-50 mr-5">
-          Delete
-        </button>
+        <Delete id={id} />
       </div>
     </div>
   );

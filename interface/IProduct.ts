@@ -3,10 +3,10 @@ export interface IListOfProducts {
 }
 
 export interface IProduct {
-  id: Number;
-  name: String;
-  price: String;
-  description: String;
-  imgUrl: String;
-  amount?: Number;
+  id: number;
+  name: string;
+  price: string;
+  description: string;
+  imgUrl: string;
+  amount?: number;
 }

@@ -22,3 +22,23 @@ export const createProductsCookies = async (product: IProduct) => {
     cookies().set("products", JSON.stringify(productCookie));
   }
 };
+
+export const eraseProductsCookies = async (id: number) => {
+  if (cookies().get("products") == undefined) {
+    const initalProductList = {
+      data: [],
+    };
+    cookies().set("products", JSON.stringify(initalProductList));
+  } else {
+    const productCookie = JSON.parse(cookies().get("products")?.value || "");
+
+    for (let i = 0; i < productCookie.data.length; i++) {
+      if (productCookie.data[i].id == id) {
+        productCookie.data.splice(i, 1);
+        break;
+      }
+    }
+
+    cookies().set("products", JSON.stringify(productCookie));
+  }
+};
